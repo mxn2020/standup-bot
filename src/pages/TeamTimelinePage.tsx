@@ -1,4 +1,5 @@
 import { CheckCircle2, AlertTriangle, Coffee, ChevronDown } from "lucide-react";
+import { Button, Card, Badge, Avatar } from "@geenius-ui/react-css";
 
 export default function TeamTimelinePage() {
     const updates = [
@@ -42,7 +43,7 @@ export default function TeamTimelinePage() {
                 <h1 style={{ fontSize: "var(--font-size-xl)", fontWeight: 700, marginBottom: 4 }}>Team Timeline</h1>
                 <p style={{ color: "var(--color-text-secondary)", fontSize: "14px" }}>Wednesday, October 28, 2026</p>
             </div>
-            <button className="btn btn-ghost" style={{ fontWeight: 600 }}><Coffee size={18} /> 4/6 Syncs</button>
+            <Button variant="ghost"><Coffee size={18} /> 4/6 Syncs</Button>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -50,12 +51,12 @@ export default function TeamTimelinePage() {
                 <div key={i} className="timeline-item">
                     <div className="timeline-dot" style={{ background: u.hasBlocker ? "var(--color-warning)" : "var(--color-accent-primary)", borderColor: "var(--color-bg-primary)" }}></div>
 
-                    <div className="card" style={{ padding: "var(--space-5)", borderLeft: u.hasBlocker ? "4px solid var(--color-warning)" : "1px solid var(--color-border)" }}>
+                    <Card padding="lg" className={u.hasBlocker ? "timeline-card-blocked" : ""}>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "var(--space-4)" }}>
                             <div style={{ display: "flex", alignItems: "center", gap: "var(--space-3)" }}>
-                                <div style={{ width: 40, height: 40, borderRadius: "50%", background: "var(--color-bg-tertiary)", color: "var(--color-text-primary)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "14px" }}>{u.user.avatar}</div>
+                                <Avatar fallback={u.user.avatar} size="md" />
                                 <div>
-                                    <div style={{ fontWeight: 700, fontSize: "15px", display: "flex", alignItems: "center", gap: 6 }}>{u.user.name} <span style={{ fontSize: "11px", background: "var(--color-bg-secondary)", padding: "2px 8px", borderRadius: 12, fontWeight: 600, color: "var(--color-text-secondary)" }}>{u.user.role}</span></div>
+                                    <div style={{ fontWeight: 700, fontSize: "15px", display: "flex", alignItems: "center", gap: 6 }}>{u.user.name} <Badge variant="secondary" size="sm">{u.user.role}</Badge></div>
                                     <div style={{ fontSize: "12px", color: "var(--color-text-tertiary)", fontWeight: 500, marginTop: 2 }}>{u.time}</div>
                                 </div>
                             </div>
@@ -77,12 +78,12 @@ export default function TeamTimelinePage() {
                                 </div>
                             )}
                         </div>
-                    </div>
+                    </Card>
                 </div>
             ))}
 
             <div className="timeline-item" style={{ display: "flex", justifyContent: "center", paddingTop: "var(--space-4)", paddingBottom: 0 }}>
-                <button className="btn btn-ghost" style={{ color: "var(--color-text-tertiary)" }}>End of updates</button>
+                <Button variant="ghost" style={{ color: "var(--color-text-tertiary)" }}>End of updates</Button>
             </div>
         </div>
     </div>);
