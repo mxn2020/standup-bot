@@ -1,5 +1,6 @@
-id: 2aacd20f-cb06-4511-89ad-3dff087ee019
 name: standup-bot
+project_scope: main
+project_type: standalone
 description: React + TypeScript + Vite
 tier: prototype
 lane: oss
@@ -9,5 +10,6 @@ stack: [typescript, react, convex, vite]
 repo: "https://github.com/mxn2020/standup-bot"
 deploy_url: null
 last_active: 2026-02-25
-tags: []
-notes: 
+tags: [standup, bot, team, meetings, async, communication, productivity]
+notes: null
+id: 2aacd20f-cb06-4511-89ad-3dff087ee019
