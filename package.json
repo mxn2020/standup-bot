@@ -44,7 +44,7 @@
   },
   "description": "Async standup meeting management for distributed teams",
   "author": "Mehdi Nabhani",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "keywords": [
     "standup",
     "bot",
